@@ -1,0 +1,13 @@
+@use'../base/theme';
+
+@mixin basic_btn {
+    text-decoration: none;
+    font-family: theme.$roboto;
+    color: white;
+    font-size: theme.$fs-18;
+    background-color: theme.$orange;
+    padding-block: 15px;
+    padding-inline: 15px;
+    border-radius: 12px;
+    min-width: 150px;
+}

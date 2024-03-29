@@ -1,0 +1,264 @@
+@use "./laylout/_navbar.scss";
+@use './laylout/footer';
+@use "./base/reset";
+@use "./base/theme";
+@use './utils/mixins';
+@use './components/bowlmouse.scss';
+@use './utils/move.scss';
+
+
+
+
+
+/*section discover*/
+.under-header {
+  display: flex;
+  background-color: theme.$black;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-discover {
+  display: flex;
+  width: 1000px;
+
+  &__links {
+    @include mixins.basic_btn;
+  }
+
+  &__texte {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+    color: theme.$white;
+    font-family: theme.$roboto;
+    width: 60%;
+  }
+
+  &__text {
+    flex-wrap: nowrap;
+    max-width: 500px;
+    padding-block: 20px;
+    font-size: theme.$fs-22;
+  }
+
+  &__heading {
+    font-size: theme.$fs-33;
+    padding-top: 50px;
+  }
+
+  background-color: theme.$black;
+  overflow: hidden;
+}
+
+.box-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+
+  &-img {
+    height: auto;
+    max-width: 250px;
+    padding-block: 50px;
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 950px) {
+  .box-discover {
+
+    &__heading {
+      padding-block: 10px;
+    }
+
+    &__texte {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      padding-bottom: 20px;
+    }
+
+    &__text {
+      max-width: 100%;
+      font-size: theme.$fs-16;
+    }
+
+    &__heading {
+      font-size: theme.$fs-24;
+      padding-top: 25px;
+    }
+  }
+
+  .box-image {
+    display: none;
+  }
+  
+}
+
+
+/*section ebook*/
+
+
+.discoverEbook {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container-ebook {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: theme.$salmon-carp;
+
+  &__box-img {
+    padding-block: 50px;
+    padding-inline: 25px;
+    overflow: hidden;
+
+    & img {
+      width: 500px;
+      height: 350px;
+      object-fit: cover;
+
+    }
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: theme.$fs-24;
+    font-family: theme.$roboto;
+
+    & h2 {
+      padding-block: 30px;
+    }
+
+    & a {
+      @include mixins.basic_btn;
+      background-color: theme.$black;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .container-ebook {
+    background-image: url(../assets/osakagyoza.jpg);
+    background-size: cover;
+    object-fit: cover;
+
+    &__box-img {
+      display: none;
+    }
+  }
+
+  .container-ebook__content h2 {
+    color: theme.$white;
+    font-size: theme.$fs-22;
+    padding-inline: 15px;
+  }
+}
+/*SEction text-info*/
+.text-info {
+  width: 100%;
+  background-color: theme.$black;
+  color: theme.$white;
+  font-size: theme.$fs-24;
+  font-family: theme.$roboto;
+  display: flex;
+  justify-content: center;
+  
+}
+.container-text {
+  text-align: center;
+  max-width: 600px;
+  padding-block: 45px;
+  &__para-one {
+    padding-bottom: 20px;
+  }
+}
+@media (max-width:600px){
+  .text-info {
+    width: 100%;
+    background-color: theme.$black;
+    color: theme.$white;
+    font-size: theme.$fs-16;
+    font-family: theme.$roboto;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .container-text {
+    text-align: center;
+    max-width: 600px;
+    padding-block: 25px;
+    padding-inline: 10px;
+    &__para-one {
+      padding-bottom: 10px;
+    }
+  }
+
+}
+/*Section image Bottom*/
+.image_bottom {
+  width: 100%;
+ 
+}
+
+  .container-box{
+    height:350px;
+    display: flex;
+    justify-content: center;
+    background-color: theme.$white;
+    &__img {
+      display: block;
+      padding-inline: 15px;
+      max-width: 350px;
+     height: auto;
+      padding-block: 20px;
+      object-fit: contain;
+    }
+  }
+    
+
+
+@media (max-width:750px) {
+  .container-box{
+    height:auto;
+    display: flex;
+    justify-content: center;
+    background-color: theme.$white;
+    &__img {
+      display: block;
+      padding-inline: 15px;
+      max-width: 350px;
+     height: auto;
+      padding-block: 20px;
+      object-fit: cover;
+    }
+  }
+}
+
+
+@media (max-width:400px){
+  .container-box__img {
+    max-width:250px;
+    height: auto;
+    padding-block: 15px;
+    object-fit: cover;
+  }
+}
+
